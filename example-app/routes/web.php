@@ -17,15 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-// Route::get('/info', function () {
-//     $name = request('name');
-//     return view(
-//         'info', [
-//             'name' => $name
-//         ]);
-// });
-// Route::get('info/{slug}', 'infosController@show');
+Route::get('info/{slug}', 'InfosController@show');
 
 Route::get('/info', function () {
     $name = request('name');
@@ -33,10 +25,3 @@ Route::get('/info', function () {
         'name' => $name
     ]);
 });
-
-
-// Route::get('/info', function () {
-//     return view('info', [
-//         'name' => request('name')
-//     ]);
-// });

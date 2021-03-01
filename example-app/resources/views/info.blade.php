@@ -9,3 +9,5 @@
 <br>
 # Cách 3
 {{ $name }}
+
+<!-- {{ $detail->body }} -->
