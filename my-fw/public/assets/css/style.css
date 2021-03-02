@@ -1,0 +1,25 @@
+
+
+
+/* 
+  reset
+*/
+
+/*  Css reset start */
+
+  .none-list-type {
+    list-style-type: none;
+    padding: 0;
+  }
+
+/*  Css reset end */
+
+/* css Menu Left start*/
+
+  .menu-left {
+    height: 100vh;
+    background-color: #e7e7e7;
+
+  }
+
+/* css Menu Left end*/

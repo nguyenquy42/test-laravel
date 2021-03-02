@@ -2,16 +2,31 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>@yield('title')</title>
+  @include('admin.partials.headercss')
 
 </head>
 
 <body>
   @include('admin.partials.header')
-  @yield('content')
-  @include('admin.partials.footer')
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3">
+        @include('admin.partials.menuleft')
+      </div>
+
+      <div class="col-lg-9">
+        <div class="body-main">
+          @yield('content')
+          @include('admin.partials.footer')
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  @include('admin.partials.footerjs')
 
 </body>
 
