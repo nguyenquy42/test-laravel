@@ -17,11 +17,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('info/{slug}', 'InfosController@show');
 
 Route::get('/info', function () {
-    $name = request('name');
-    return view('info', [
-        'name' => $name
-    ]);
+    return view('info');
 });
+
+
+Route::get('/admin', function () {
+    return view('admin/login');
+});
+
+
+Route::get('/admin/home', function () {
+    return view('admin/home');
+});
+
+
+Route::get('/admin/post', function () {
+    return view('admin/post');
+});
+
