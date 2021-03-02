@@ -12,11 +12,11 @@
 
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-3">
+      <div class="col-md-3 col-lg-3 p-0">
         @include('admin.partials.menuleft')
       </div>
 
-      <div class="col-lg-9">
+      <div class="col-md-9 col-lg-9">
         <div class="body-main">
           @yield('content')
           @include('admin.partials.footer')

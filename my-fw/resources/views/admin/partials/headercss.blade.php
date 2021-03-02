@@ -3,8 +3,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>@yield('title')</title>
   
-  <link rel="stylesheet" href="{{ Request::root() }}/assets/vender/css/bootstrap.css">
-  <link rel="stylesheet" href="{{ Request::root() }}/assets/vender/css/bootstrap.min.css">
-  <link rel="stylesheet" href="{{ Request::root() }}/assets/css/home.css">
-  <link rel="stylesheet" href="{{ Request::root() }}/assets/css/style.css">
+  <link rel="stylesheet" href="{{ asset('assets/vender/css/bootstrap.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/vender/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
   
