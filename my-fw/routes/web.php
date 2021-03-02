@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages/index');
 });
 
 
@@ -33,7 +33,7 @@ Route::get('/admin/home', function () {
 });
 
 
-Route::get('/admin/post', function () {
-    return view('admin/post');
+Route::get('/admin/listblog', function () {
+    return view('admin/listblog');
 });
 

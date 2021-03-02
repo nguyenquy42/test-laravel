@@ -10,8 +10,8 @@
 
       <div>
         <ul class="none-list-type menu_top">
-          <li class="menu_top_link"><a href="#"> <i class="fa fa-globe"></i> Xem web của bạn</a></li>
-          <li class="menu_top_link"><a href="#"> <i class="fa fa-sign-out" aria-hidden="true"></i> Đăng xuất</a></li>
+          <li class="menu_top_link"><a href="{{ Request::root() }}"> <i class="fa fa-globe"></i> Xem web của bạn</a></li>
+          <li class="menu_top_link"><a clas href="#"> <i class="fa fa-sign-out" aria-hidden="true"></i> Đăng xuất</a></li>
         </ul>
       </div>
 
