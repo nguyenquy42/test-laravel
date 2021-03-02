@@ -7,6 +7,11 @@
 
 /*  Css reset start */
 
+  html,
+  body {
+    height: 100%;
+  }
+
   a {
     color: inherit;
   }
@@ -30,9 +35,22 @@
 
 /* css Menu Left start*/
 
+  .top_nav_header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .menu-left {
     height: 100vh;
+    width: 225px;
     background-color: #fafafa;
+    position: absolute;
+    overflow: hidden;
+    z-index: 810;
+    top: 0;
+    left: 0;
   }
 
   .listmenu {
@@ -45,7 +63,7 @@
 
   .menu_items a {
     padding: 5px 20px;
-    line-height: 2rem;
+    line-height: 2.5rem;
   }
 
   .menu_items:hover {
@@ -72,12 +90,43 @@
     background-color: #8496a7;
   }
 
+  .menu_top_link a {
+    color: #fff;
+  }
+
+  .menu_top .menu_top_link {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
 /* css Menu Left end*/
 
 /* Css Home start */
 
-  .body-main {
+  .main-body {
+    margin-left: 230px;
+    padding-left: 30px;
+    flex-grow: 1;
+  }
+  
+  .main {
+    display: flex;
     flex-direction: column;
+    height: 100%;
+    position: relative;
   }
 
 /* Css Home end */
+
+/* Css Footer start */
+
+  .main-footer {
+    margin-left: 200px;
+    padding: 15px 0 15px 30px;
+  }
+
+  .main-footer {
+    background-color: #f7f7f7;
+  }
+
+/* Css Footer end */

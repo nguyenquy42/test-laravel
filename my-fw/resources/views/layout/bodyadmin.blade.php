@@ -9,24 +9,19 @@
 <body>
   @include('admin.partials.header')
 
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-3 col-lg-3 p-0">
-        @include('admin.partials.menuleft')
+  <div class="main">
+    @include('admin.partials.menuleft')
+    <main class="main-body">
+      <div class="body">
+        @yield('content')
       </div>
+    </main>
 
-      <div class="col-md-9 col-lg-9">
-        <div class="body-main">
-          @yield('content')
-          @include('admin.partials.footer')
-        </div>
-      </div>
+    @include('admin.partials.footer')
 
-    </div>
+    @include('admin.partials.footerjs')
+
   </div>
-
-  @include('admin.partials.footerjs')
 
 </body>
 
