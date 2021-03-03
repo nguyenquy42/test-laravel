@@ -45,3 +45,44 @@
   }
 
 /* Css Header Trang chủ end */
+
+/* css list product start*/
+
+  .checked {
+    color: orange;
+  }
+
+  .list_product {
+    border: 1px solid #ececec;
+    transition: all 0.5s linear;
+  }
+
+  .list_product:hover {
+    transform: translateY(-5px);
+  }
+
+  .product_item_content {
+    padding: 10px;
+  }
+
+  .list_price_cart {
+    display: flex;
+    justify-content:space-between;
+    margin-top: 1rem;
+  }
+
+  .product_cart_item {
+      display: inline-block;
+  }
+  
+
+/* css list product end*/
+
+
+/* Css Footer start */
+
+  .main_footer {
+    padding: 20px 0;
+  }
+
+/* Css Footer end */

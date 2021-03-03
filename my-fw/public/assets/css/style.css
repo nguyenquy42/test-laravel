@@ -20,6 +20,10 @@ a:hover {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+}
+
 .none-list-type {
   list-style-type: none;
   padding: 0;
