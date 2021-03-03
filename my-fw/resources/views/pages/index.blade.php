@@ -6,6 +6,8 @@
 @section('content')
 <main>
 
+<?= $product; ?>
+
   <!-- List Product Start -->
   <section class="section_product">
 
