@@ -71,31 +71,31 @@
 
       <div class="row">
 
-        <?php for ($i = 0; $i < 3; $i++) : ?>
+      <?php foreach ($users as $user) : ?>
           <div class="col-lg-4">
             <div class="row mb-4 main_blog">
               <div class="col-lg-3  d-flex align-items-center">
                 <div class="blog_item_img">
-                  <a href="#"><img src="{{ $detail['imgUrl'] }}" alt="img"></a>
+                  <a href="#"><img src="{{ $user->imgurl }}" alt="img"></a>
                 </div>
               </div>
               <div class="col-lg-9">
                 <div class="blog_item_content">
                   <a href="#">
-                    <h3 class="blog_item_title">{{ $detail['title'] }}</h3>
+                    <h3 class="blog_item_title">{{ $user->title }}</h3>
                   </a>
-                  <p class="m-0 blog_item_intro">{{ $detail['intro'] }}</p>
+                  <p class="m-0 blog_item_intro">{{ $user->content }}</p>
                   <div class="list_author_date">
                     <ul class="none-list-type blog_item_author_date">
-                      <li class="blog_item_ad"><a href="#"><i class="fa fa-user" aria-hidden="true"></i> {{ $detail['author'] }}</a></li>
-                      <li class="blog_item_ad"><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> {{ $detail['date'] }}</a></li>
+                      <li class="blog_item_ad"><a href="#"><i class="fa fa-user" aria-hidden="true"></i> {{ $user->author }}</a></li>
+                      <li class="blog_item_ad"><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> {{ $user->date }}</a></li>
                     </ul>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        <?php endfor; ?>
+        <?php endforeach; ?>
 
       </div>
     </div>
