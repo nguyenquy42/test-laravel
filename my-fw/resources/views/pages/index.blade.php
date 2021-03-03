@@ -5,7 +5,6 @@
 
 @section('content')
 <main>
-
   <!-- List Product Start -->
   <section class="section_product">
 
@@ -17,19 +16,19 @@
         </div>
       </div>
       <div class="row">
-        <?php for ($i = 0; $i < 4; $i++) : ?>
+          @foreach ($products as $item)
           <div class="col-lg-3">
             <div class="list_product mb-4">
               <div class="product_item">
                 <div class="product_item_img">
-                  <a href="#"><img src="{{ $product['imgUrl'] }}" alt="product"></a>
+                  <a href="#"><img src="{{ $item->imgurl }}" alt="product"></a>
                 </div>
                 <div class="product_item_content">
-                  <span>{{ $product['category'] }}</span>
+                  <span>{{ $item->category }}</span>
                   <a href="#">
-                    <h3 class="product_item_title">{{ $product['title'] }}</h3>
+                    <h3 class="product_item_title">{{ $item->title }}</h3>
                   </a>
-                  <p class="product_item_intro">{{ $product['intro'] }}</p>
+                  <p class="product_item_intro">{{ $item->intro }}</p>
                   <div class="star_rating">
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
@@ -39,7 +38,7 @@
                   </div>
                   <div class="list_price_cart">
                     <div class="price">
-                      <span>{{ $product['price'] }} $</span>
+                      <span>{{ $item->price }} $</span>
                     </div>
                     <ul class="m-0 none-list-type product-cart">
                       <li class="product_cart_item"><a href="#"><i class="fa fa-heart"></i></a></li>
@@ -50,7 +49,7 @@
               </div>
             </div>
           </div>
-        <?php endfor; ?>
+          @endforeach
       </div>
 
     </div>
@@ -71,31 +70,29 @@
 
       <div class="row">
 
-      <?php foreach ($users as $user) : ?>
           <div class="col-lg-4">
             <div class="row mb-4 main_blog">
               <div class="col-lg-3  d-flex align-items-center">
                 <div class="blog_item_img">
-                  <a href="#"><img src="{{ $user->imgurl }}" alt="img"></a>
+                  <a href="#"><img src="" alt="img"></a>
                 </div>
               </div>
               <div class="col-lg-9">
                 <div class="blog_item_content">
                   <a href="#">
-                    <h3 class="blog_item_title">{{ $user->title }}</h3>
+                    <h3 class="blog_item_title"></h3>
                   </a>
-                  <p class="m-0 blog_item_intro">{{ $user->content }}</p>
+                  <p class="m-0 blog_item_intro"></p>
                   <div class="list_author_date">
                     <ul class="none-list-type blog_item_author_date">
-                      <li class="blog_item_ad"><a href="#"><i class="fa fa-user" aria-hidden="true"></i> {{ $user->author }}</a></li>
-                      <li class="blog_item_ad"><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> {{ $user->date }}</a></li>
+                      <li class="blog_item_ad"><a href="#"><i class="fa fa-user" aria-hidden="true"></i> </a></li>
+                      <li class="blog_item_ad"><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> </a></li>
                     </ul>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        <?php endforeach; ?>
 
       </div>
     </div>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\BlogsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +14,7 @@ use App\Http\Controllers\ProductController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', [ProductController::class, 'show']);
+Route::get('/', [ProductController::class, 'index']);
 
 
 Route::get('/bai-viet', function () {
