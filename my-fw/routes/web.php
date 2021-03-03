@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,24 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $products = [
-        'category' => 'Công nghệ.',
-        'title' => 'Sách củ nhất.',
-        'intro' => 'sản phẩn không như hình, ngu mua rán chịu.',
-        'price' => '5.000.'
-    ];
+Route::get('/', [ProductController::class, 'show']);
 
-    $details = [
-        'title' => 'Lý giải nguyên nhân CONAN thông minh, minh thì không(ngu á).',
-        'intro' => 'Hướng dẫn cách có người yêu, một phát ăn ngay và luôn, không tin thì thôi. NEXT..',
-        'author' => 'Minh Quys',
-        'date' => '69-96-1969'
-    ];
-    return view('pages/index', [
-        'product' => $products,
-        'detail' => $details
-    ]);
+
+Route::get('/bai-viet', function () {
+    return view('pages/detailblog');
 });
 
 

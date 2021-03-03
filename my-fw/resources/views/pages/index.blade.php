@@ -6,8 +6,6 @@
 @section('content')
 <main>
 
-<?= $product; ?>
-
   <!-- List Product Start -->
   <section class="section_product">
 
@@ -24,14 +22,14 @@
             <div class="list_product mb-4">
               <div class="product_item">
                 <div class="product_item_img">
-                  <a href="#"><img src="assets/images/product/1.jpg" alt="product"></a>
+                  <a href="#"><img src="{{ $product['imgUrl'] }}" alt="product"></a>
                 </div>
                 <div class="product_item_content">
-                  <span>Công nghệ</span>
+                  <span>{{ $product['category'] }}</span>
                   <a href="#">
-                    <h3 class="product_item_title">Sách củ nhất</h3>
+                    <h3 class="product_item_title">{{ $product['title'] }}</h3>
                   </a>
-                  <p class="product_item_intro">sản phẩm lỗi, mua ngu rán chiệu.</p>
+                  <p class="product_item_intro">{{ $product['intro'] }}</p>
                   <div class="star_rating">
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
@@ -41,7 +39,7 @@
                   </div>
                   <div class="list_price_cart">
                     <div class="price">
-                      <span>5.000 $</span>
+                      <span>{{ $product['price'] }} $</span>
                     </div>
                     <ul class="m-0 none-list-type product-cart">
                       <li class="product_cart_item"><a href="#"><i class="fa fa-heart"></i></a></li>
@@ -78,19 +76,19 @@
             <div class="row mb-4 main_blog">
               <div class="col-lg-3  d-flex align-items-center">
                 <div class="blog_item_img">
-                  <a href="#"><img src="assets/images/product/2.jpg" alt="img"></a>
+                  <a href="#"><img src="{{ $detail['imgUrl'] }}" alt="img"></a>
                 </div>
               </div>
               <div class="col-lg-9">
                 <div class="blog_item_content">
                   <a href="#">
-                    <h3 class="blog_item_title">Bí kiếp CONAN</h3>
+                    <h3 class="blog_item_title">{{ $detail['title'] }}</h3>
                   </a>
-                  <p class="m-0 blog_item_intro">Hướng dẫn cách có người yêu, một phát ăn ngay và luôn, không tin thì thôi. NEXT..</p>
+                  <p class="m-0 blog_item_intro">{{ $detail['intro'] }}</p>
                   <div class="list_author_date">
                     <ul class="none-list-type">
-                      <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Minh Quang</a></li>
-                      <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> 3/3/2021</a></li>
+                      <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> {{ $detail['author'] }}</a></li>
+                      <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> {{ $detail['date'] }}</a></li>
                     </ul>
                   </div>
                 </div>
