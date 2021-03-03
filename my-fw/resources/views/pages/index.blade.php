@@ -86,9 +86,9 @@
                   </a>
                   <p class="m-0 blog_item_intro">{{ $detail['intro'] }}</p>
                   <div class="list_author_date">
-                    <ul class="none-list-type">
-                      <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> {{ $detail['author'] }}</a></li>
-                      <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> {{ $detail['date'] }}</a></li>
+                    <ul class="none-list-type blog_item_author_date">
+                      <li class="blog_item_ad"><a href="#"><i class="fa fa-user" aria-hidden="true"></i> {{ $detail['author'] }}</a></li>
+                      <li class="blog_item_ad"><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> {{ $detail['date'] }}</a></li>
                     </ul>
                   </div>
                 </div>

@@ -21,21 +21,17 @@ Route::get('/bai-viet', function () {
     return view('pages/detailblog');
 });
 
-
 Route::get('/info', function () {
     return view('info');
 });
-
 
 Route::get('/admin', function () {
     return view('admin/login');
 });
 
-
 Route::get('/admin/home', function () {
     return view('admin/home');
 });
-
 
 Route::get('/admin/listblog', function () {
     return view('admin/listblog');

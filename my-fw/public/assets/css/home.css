@@ -72,12 +72,19 @@
   }
 
   .product_cart_item {
-      display: inline-block;
+    display: inline-block;
   }
-  
 
 /* css list product end*/
 
+/* Css list Blogs start */
+
+  .blog_item_ad {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+/* Css list Blogs end */
 
 /* Css Footer start */
 
