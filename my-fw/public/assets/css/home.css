@@ -1,3 +1,47 @@
 
+/* Css Header Trang chủ start */
 
-/* css home */
+  .main_contact_header_top,
+  .main_author {
+    padding: 10px 0;
+  }
+
+  .contact_ht_item {
+    display: inline-block;
+    margin-right: 15px;
+  }
+
+  .list_account_item {
+    display: inline-block;
+    padding: 0 5px;
+  }
+
+  .main_author ul li+li:before {
+    content: "|";
+    margin-right: 10px;
+  }
+
+  .box_contact_top {
+    color: #fff;
+    padding-right: 15px;
+    height: 100%;  
+  }
+
+  .list_contact_top {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .list_contact_items {
+    margin: 0 5px;
+  }
+
+  .list_author_top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+/* Css Header Trang chủ end */
