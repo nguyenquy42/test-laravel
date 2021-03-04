@@ -2,6 +2,10 @@
 
 @section('title', 'Trang chủ | Lpbooks')
 
+@section('link_css_home')
+<link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
+@endsection
+
 
 @section('content')
 <main>

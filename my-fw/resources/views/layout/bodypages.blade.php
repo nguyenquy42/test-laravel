@@ -3,11 +3,11 @@
 
 <head>
     @include('pages.partials.headercss')
-
+    @yield('link_css_home')
 </head>
 
 <body>
-    
+
     @include('pages.partials.header')
 
     @yield('content')
