@@ -53,7 +53,7 @@
               <a class="btn btn-outline-info" href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
             </td>
             <td>
-              <button type="button" class="btn btn-outline-danger"><i class="fa fa-times" aria-hidden="true"></i></button>
+              <a href="delete/{{ $item->id }}" class="btn btn-outline-danger btn_text_danger"><i class="fa fa-times" aria-hidden="true"></i></a>
             </td>
           </tr>
 

@@ -87,7 +87,7 @@
                 <a href="#">
                   <h3 class="blog_item_title">{{ $item->title }}</h3>
                 </a>
-                <p class="m-0 blog_item_intro">{{ $item->content }}</p>
+                <p class="m-0 blog_item_intro">{{ strip_tags($item->content) }}</p>
                 <div class="list_author_date">
                   <ul class="none-list-type blog_item_author_date">
                     <li class="blog_item_ad"><a href="#"><i class="fa fa-user" aria-hidden="true"></i>{{ $item->author }} </a></li>

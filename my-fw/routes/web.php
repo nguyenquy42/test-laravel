@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BlogsController;
-use App\Http\Controllers\CreateBlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,10 +33,11 @@ Route::get('/admin/home', function () {
     return view('admin/home');
 });
 
-Route::get('/admin/listblog', [BlogsController::class, 'show']);
 
 Route::get('/admin/createblog', function () {
     return view('admin/createblog');
 });
 
-Route::post('/admin/createblog', [CreateBlogController::class, 'addData']);
+Route::get('/admin/listblog', [BlogsController::class, 'show']);
+Route::post('/admin/createblog', [BlogsController::class, 'addData']);
+Route::get('/admin/delete/{id}', [BlogsController::class, 'delete']);
