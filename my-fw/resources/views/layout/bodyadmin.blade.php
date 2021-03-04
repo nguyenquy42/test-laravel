@@ -21,6 +21,7 @@
     @include('admin.partials.footer')
 
     @include('admin.partials.footerjs')
+    @yield('linkjs')
 
   </div>
 

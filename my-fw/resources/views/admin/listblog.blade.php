@@ -7,7 +7,7 @@
   <div class="main-list-blog">
     <div class="d-flex mt-3 blog_title">
       <p m-0><i class="fa fa-bars text-light-blue"></i> Danh sách bài viết</p>
-      <a class="btn btn-outline-success post_blog_link" href="/admin/insertblog">Thêm bài viết</a>
+      <a class="btn btn-outline-success post_blog_link" href="/admin/createblog">Thêm bài viết</a>
     </div>
 
     <div class="list_post">
