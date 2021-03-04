@@ -1,6 +1,6 @@
 @extends('layout.bodypages')
 
-@section('title', 'Trang chủ | Lpbooks')
+@section('title', 'bài viết | hai con thằng lằn con')
 
 
 

@@ -1,5 +1,5 @@
 @extends('layout.bodyadmin')
-@section('title', 'Post | Lpbooks')
+@section('title', 'Danh sách bài viết | Lpbooks')
 
 @section('content')
 <div class="container-fulid">

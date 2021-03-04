@@ -2,8 +2,9 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+  <title>@yield('title')</title>
   @include('admin.partials.headercss')
-@yield('linkcss')
+  @yield('linkcss')
 
 </head>
 

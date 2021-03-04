@@ -1,5 +1,5 @@
 @extends('layout.bodyadmin')
-@section('title', 'Post | Lpbooks')
+@section('title', 'Tạo bài viết | Lpbooks')
 
 @section('linkcss')
 <link rel="stylesheet" href="{{ asset('assets/css/admin.create.blog.css') }}">
@@ -16,7 +16,16 @@
 @endsection
 
 @section('content')
-<div class="container-fulid bg_black">
+<div class="container-fulid bg_black mt-3">
+  @if ($errors->any())
+  <div class="alert alert-danger">
+    <ul>
+      @foreach ($errors->all() as $error)
+      <li>{{ $error }}</li>
+      @endforeach
+    </ul>
+  </div>
+  @endif
 
   <form action="createblog" method="POST">
     @csrf
@@ -52,7 +61,7 @@
       <tbody>
         <tr class="text-center">
           <td colspan="2">
-          <button type="submit" class="btn btn-outline-secondary">Đăng bài</button>
+            <button type="submit" class="btn btn-outline-secondary">Đăng bài</button>
           </td>
         </tr>
       </tbody>
