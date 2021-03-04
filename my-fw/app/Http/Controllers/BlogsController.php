@@ -3,16 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
+use App\Models\BlogsModel;
+
 class BlogsController extends Controller
 {
    
   public function show()
   {
+    $blogs = BlogsModel::all();
 
-    $users = DB::select('select * from posts ');
-    return view('/pages.index', [
-      'users' => $users
+    return view('/admin.listblog', [
+      'blogs' => $blogs
     ]);
     
   }

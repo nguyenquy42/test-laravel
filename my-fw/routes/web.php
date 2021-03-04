@@ -33,6 +33,8 @@ Route::get('/admin/home', function () {
     return view('admin/home');
 });
 
-Route::get('/admin/listblog', function () {
-    return view('admin/listblog');
+Route::get('/admin/listblog', [BlogsController::class, 'show']);
+
+Route::get('/admin/insertblog', function () {
+    return view('admin/insertblog');
 });

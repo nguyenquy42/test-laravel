@@ -3,6 +3,7 @@
 
 <head>
   @include('admin.partials.headercss')
+@yield('linkcss')
 
 </head>
 
