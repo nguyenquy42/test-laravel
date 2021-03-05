@@ -5,6 +5,7 @@
 
 @section('content')
 
-        <h1>đây là trang chủ</h1>
+        <h1>hello, {{ session('email') }} </h1>
+        <a href="/logout">logut</a>
 
 @endsection

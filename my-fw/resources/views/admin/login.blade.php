@@ -13,7 +13,8 @@
         <img src="assets/images/logo/logo.png" alt="IMG">
       </div>
 
-      <form class="login100-form validate-form">
+      <form class="login100-form validate-form" action="/login" method="POST">
+      @csrf
         <span class="login100-form-title">
           Login
         </span>
