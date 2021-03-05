@@ -6,13 +6,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Validator;
 
+use Illuminate\Support\Facades\Auth;
+
+
 class AdminAuth extends Controller
 {
 
   //
   public function adminLogin(Request $request)
   {
-
     $data = $request->input('email');
     $request->session()->put('email', $data);
     return redirect('admin/home');

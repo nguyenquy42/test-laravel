@@ -114,4 +114,8 @@ return [
 
     'password_timeout' => 10800,
 
+
+    'model' => 'App\Models\User',
+    'table' => 'users',
+
 ];

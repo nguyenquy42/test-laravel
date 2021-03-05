@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\AdminAuth;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,12 @@ use App\Http\Controllers\AdminAuth;
 |
 */
 
+// // login in data.
+// Route::get('/admin', [LoginController::class, 'login'])->name('login');
+// Route::post('login', [LoginController::class, 'authenticate']);
+// Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
+// Route::get('/home', [LoginController::class, 'home'])->name('home');
 
 // Login 
 Route::get('/admin/listblog', [BlogsController::class, 'show']);
