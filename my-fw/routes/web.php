@@ -15,34 +15,10 @@ use App\Http\Controllers\AdminAuth;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [HomeController::class, 'index']);
 
 
-Route::get('/bai-viet', function () {
-    return view('pages/detailblog');
-});
 
-Route::get('/info', function () {
-    return view('info');
-});
-
-// Route::get('/admin', function () {
-//     return view('admin/login');
-// });
-
-Route::get('/admin/home', function () {
-    return view('admin/home');
-});
-
-
-Route::get('/admin/createblog', function () {
-    return view('admin/createblog');
-});
-
-Route::post('/admin/createblog', [BlogsController::class, 'addData']);
-Route::get('/admin/delete/{id}', [BlogsController::class, 'delete']);
-
-// Login
+// Login 
 Route::get('/admin/listblog', [BlogsController::class, 'show']);
 
 Route::post("login", [AdminAuth::class, 'adminLogin']);
@@ -51,3 +27,27 @@ Route::get('/admin', [AdminAuth::class, 'check']);
 
 // Logout
 Route::get('/logout', [AdminAuth::class, 'logout']);
+
+
+// Admin
+Route::get('/admin/home', function () {
+    return view('admin/home');
+});
+
+Route::get('/admin/createblog', function () {
+    return view('admin/createblog');
+});
+
+Route::post('/admin/createblog', [BlogsController::class, 'addData']);
+Route::get('/admin/delete/{id}', [BlogsController::class, 'delete']);
+
+//  Trang View
+Route::get('/', [HomeController::class, 'index']);
+
+Route::get('/bai-viet', function () {
+    return view('pages/detailblog');
+});
+
+Route::get('/info', function () {
+    return view('info');
+});
