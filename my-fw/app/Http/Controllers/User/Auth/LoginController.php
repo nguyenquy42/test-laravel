@@ -15,24 +15,32 @@ class LoginController extends Controller
     if ($request->getMethod() == 'GET') {
       return view('user.auth.login');
     }
-    
+
     $request->validate([
       'email' => 'required|string|email',
       'password' => 'required|string',
     ]);
 
     $credentials = $request->only(['email', 'password']);
-    
 
     if (Auth::attempt($credentials)) {
 
       $user = Auth::user();
+      $username = $user->name;
+      $request->session()->put('user', $username);
+      return redirect()->route('home');
 
-      return view('/user.home', [
-        'user' => $user
-      ]);
     } else {
       return redirect()->back()->withInput();
     }
   }
+
+  public function logout()
+  {
+    if (session()->has('user')) {
+      session()->pull('user', null);
+    }
+    return view('/pages/index');
+  }
+  
 }

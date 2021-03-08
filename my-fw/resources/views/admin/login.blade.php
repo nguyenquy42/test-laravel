@@ -3,14 +3,14 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<link rel="stylesheet" href="assets/css/admin.login.css" title="css">
+<link rel="stylesheet" href="{{ asset('assets/css/admin.login.css') }}" title="css">
 <!-- <script src="assets/js/login.js"></script> -->
-
+ 
 <div class="limiter">
   <div class="container-login100">
     <div class="wrap-login100">
       <div class="login100-pic js-tilt" data-tilt>
-        <img src="assets/images/logo/logo.png" alt="IMG">
+        <img src="{{ asset('assets/images/logo/logo.png') }}" alt="IMG">
       </div>
 
       <form class="login100-form validate-form" action="{{ route('admin.login') }}" method="POST">

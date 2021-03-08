@@ -12,16 +12,19 @@
       <div class="col-md-6 col-lg-6">
         <div class="main_author">
           <ul class="m-0 none-list-type list_author_top">
+            @if (empty(session('user')))
             <li class="list_account_item"><a href="#">đăng ký</a></li>
-            <li class="list_account_item"><a href="#">đăng nhập</a></li>
+            <li class="list_account_item"><a href="/login">đăng nhập</a></li>
+            @else
             <li class="list_account_item info_author">
-              <span class="" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> minh quys</span>
+              <span class="" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> {{ session('user') }}</span>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="#">Tài khoản của tôi</a>
                 <a class="dropdown-item" href="#">Đơn mua</a>
-                <a class="dropdown-item" href="#">Đăng xuất</a>
+                <a class="dropdown-item" href="/logout">Đăng xuất</a>
               </div>
             </li>
+            @endif
           </ul>
         </div>
       </div>
@@ -73,7 +76,7 @@
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="#">tài khoản của tôi</a>
                   <a class="dropdown-item" href="#">đơn hàng</a>
-                  <a class="dropdown-item" href="#">đăng xuất</a>
+                  <a class="dropdown-item" href="/logout">đăng xuất</a>
                 </div>
               </li>
               <li class="nav-item d-md-none">

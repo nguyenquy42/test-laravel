@@ -12,7 +12,7 @@ class LoginController extends Controller
   public function login(Request $request)
   {
     if ($request->getMethod() == 'GET') {
-      return view('admin.auth.login');
+      return view('admin.login');
     }
 
     $credentials = $request->only(['email', 'password']);
