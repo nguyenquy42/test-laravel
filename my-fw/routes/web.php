@@ -30,9 +30,11 @@ use App\Http\Controllers\User\Auth\LoginController;
 
 
 Route::match(['get', 'post'], '/login', [LoginController::class, 'login'])->name('login');
+
 Route::middleware('auth')->group(function (){
     Route::get('/', [HomeController::class, 'index'])->name('home');
 });
+
 // Route::get('/admin/listblog', [BlogsController::class, 'show']);
 
 // Route::post("login", [AdminAuth::class, 'adminLogin']);
