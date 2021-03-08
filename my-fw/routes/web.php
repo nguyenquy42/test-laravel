@@ -3,8 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BlogsController;
-use App\Http\Controllers\AdminAuth;
-use App\Http\Controllers\Auth\LoginController;
+// use App\Http\Controllers\AdminAuth;
+// use App\Http\Controllers\Auth\LoginController;
+
+use App\Http\Controllers\User\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,14 +27,20 @@ use App\Http\Controllers\Auth\LoginController;
 // Route::get('/home', [LoginController::class, 'home'])->name('home');
 
 // Login 
-Route::get('/admin/listblog', [BlogsController::class, 'show']);
 
-Route::post("login", [AdminAuth::class, 'adminLogin']);
 
-Route::get('/admin', [AdminAuth::class, 'check']);
+Route::match(['get', 'post'], '/login', [LoginController::class, 'login'])->name('login');
+Route::middleware('auth')->group(function (){
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+});
+// Route::get('/admin/listblog', [BlogsController::class, 'show']);
 
-// Logout
-Route::get('/logout', [AdminAuth::class, 'logout']);
+// Route::post("login", [AdminAuth::class, 'adminLogin']);
+
+// Route::get('/admin', [AdminAuth::class, 'check']);
+
+// // Logout
+// Route::get('/logout', [AdminAuth::class, 'logout']);
 
 
 // Admin
