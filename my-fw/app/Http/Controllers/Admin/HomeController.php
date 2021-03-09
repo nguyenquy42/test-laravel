@@ -9,9 +9,11 @@ use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
   //
-  public function index()
+  public function index(Request $request)
   {
-    $user = Auth::guard('admin')->user();
+    $data = Auth::guard('admin')->user();
+    $user = $data->name;
+    $request->session()->put('username', $user);
     return view('admin/home');
   }
 }

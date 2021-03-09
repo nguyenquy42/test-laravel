@@ -50,7 +50,7 @@
               </form>
             </td>
             <td>
-              <a class="btn btn-outline-info" href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+              <a class="btn btn-outline-info" href="edit/{{ $item->id }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
             </td>
             <td>
               <a href="delete/{{ $item->id }}" class="btn btn-outline-danger btn_text_danger"><i class="fa fa-times" aria-hidden="true"></i></a>
