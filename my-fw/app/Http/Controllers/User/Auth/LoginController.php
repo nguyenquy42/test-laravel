@@ -10,16 +10,19 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
   //
+  public function getLogin()
+  {
+    return view('user.auth.login');
+  }
+
   public function login(Request $request)
   {
-    if ($request->getMethod() == 'GET') {
-      return view('user.auth.login');
-    }
 
     $request->validate([
       'email' => 'required|string|email',
       'password' => 'required|string',
     ]);
+
 
     $credentials = $request->only(['email', 'password']);
 
@@ -28,19 +31,21 @@ class LoginController extends Controller
       $user = Auth::user();
       $username = $user->name;
       $request->session()->put('user', $username);
-      return redirect()->route('home');
-
+      return redirect('');
     } else {
       return redirect()->back()->withInput();
     }
   }
 
-  public function logout()
+  public function logout(Request $request)
   {
-    if (session()->has('user')) {
-      session()->pull('user', null);
-    }
-    return view('/pages/index');
+    Auth::logout();
+
+    $request->session()->invalidate();
+
+    $request->session()->regenerateToken();
+
+    return redirect('/');
+
   }
-  
 }

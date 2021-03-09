@@ -24,15 +24,16 @@
       <div class="wrap-login100">
         <div class="login100-form-title" style="background-image: url(assets/images/banner/bg-01.jpg);">
           <span class="login100-form-title-1">
-            Đăng Nhập
+            Đăng ký
           </span>
         </div>
 
-        <form method="POST" action="/postlogin" class="login100-form validate-form">
+        <form method="POST" action="/postregister" class="login100-form validate-form">
           @csrf
+
           <div class="wrap-input100 validate-input m-b-26">
             <span class="label-input100">Email</span>
-            <input class="input100" type="text" name="email" placeholder="Nhập Email">
+            <input class="input100" type="text" name="email" placeholder="Nhập Email đăng nhập">
             <span class="focus-input100"></span>
           </div>
 
@@ -42,28 +43,26 @@
             <span class="focus-input100"></span>
           </div>
 
-          <div class="flex-sb-m w-full p-b-30">
-            <div class="contact100-form-checkbox">
-              <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-              <label class="label-checkbox100" for="ckb1">
-                Lưu đăng nhập
-              </label>
-            </div>
+          <div class="wrap-input100 validate-input m-b-18">
+            <span class="label-input100">Nhắc Lại</span>
+            <input class="input100" type="password" name="password" placeholder="Nhắc Lại mật khẩu">
+            <span class="focus-input100"></span>
+          </div>
 
-            <div>
-              <a href="#" class="txt1">
-                Quên mật khẩu?
-              </a>
-            </div>
+
+          <div class="wrap-input100 validate-input m-b-26">
+            <span class="label-input100">Tên</span>
+            <input class="input100" type="text" name="username" placeholder="Nhập Họ và Tên của bạn.">
+            <span class="focus-input100"></span>
           </div>
 
           <div class="container-login100-form-btn flex-sb-m w-full">
             <button class="login100-form-btn">
-              Đăng Nhập
+              Đăng Ký
             </button>
 
-            <a href="/register" class="login100-form-register-btn">
-              Đăng Ký
+            <a href="/login" class="login100-form-register-btn">
+              Đăng Nhập
             </a>
           </div>
         </form>

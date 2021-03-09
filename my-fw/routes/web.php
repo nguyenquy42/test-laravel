@@ -3,10 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BlogsController;
-use App\Http\Controllers\AdminAuth;
-// use App\Http\Controllers\Auth\LoginController;
-
 use App\Http\Controllers\User\Auth\LoginController;
+use App\Http\Controllers\User\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,12 +17,21 @@ use App\Http\Controllers\User\Auth\LoginController;
 |
 */
 
-Route::match(['get', 'post'], '/login', [LoginController::class, 'login'])->name('login');
+// Login User.
+Route::get('/login', [LoginController::class, 'getLogin']);
+Route::post('/postlogin', [LoginController::class, 'login']);
+Route::get('/logout', [LoginController::class, 'logout']);
 
-Route::middleware('auth')->group(function (){
-    Route::get('/', [HomeController::class, 'index'])->name('home');
-    Route::get('/logout', [LoginController::class, 'logout'])->name('home');
-});
+// Route::match(['get', 'post'], '/login', [LoginController::class, 'login'])->name('login');
+
+// Route::middleware('auth')->group(function (){
+//     Route::get('/', [HomeController::class, 'index'])->name('home');
+//     Route::get('/logout', [LoginController::class, 'logout'])->name('home');
+// });
+
+// Resgister User.
+Route::get('/register', [RegisterController::class, 'getRegister']);
+
 
 
 // Admin

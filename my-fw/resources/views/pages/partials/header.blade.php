@@ -13,7 +13,7 @@
         <div class="main_author">
           <ul class="m-0 none-list-type list_author_top">
             @if (empty(session('user')))
-            <li class="list_account_item"><a href="#">đăng ký</a></li>
+            <li class="list_account_item"><a href="/register">đăng ký</a></li>
             <li class="list_account_item"><a href="/login">đăng nhập</a></li>
             @else
             <li class="list_account_item info_author">
