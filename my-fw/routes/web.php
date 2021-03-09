@@ -31,7 +31,7 @@ Route::get('/logout', [LoginController::class, 'logout']);
 
 // Resgister User.
 Route::get('/register', [RegisterController::class, 'getRegister']);
-
+Route::post('/createregister', [RegisterController::class, 'create']);
 
 
 // Admin

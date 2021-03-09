@@ -3,42 +3,39 @@
 namespace App\Http\Controllers\User\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Validator;
+use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Support\Facades\Validator;
+
+
 
 class RegisterController extends Controller
 {
   //
 
-  public function getRegister() {
+  public function getRegister()
+  {
     return view("user.auth.register");
   }
 
-  protected function validator(array $data)
+  protected function create(Request $request)
   {
-    return Validator::make($data, [
-      'name' => 'required|max:255',
-      'email' => 'required|email|max:255',
-      'username' => 'required|max:16|unique:users',
-      'password' => 'required|min:6|confirmed',
-    ]);
-  }
 
-  /**
-   * Create a new user instance after a valid registration.
-   *
-   * @param  array  $data
-   * @return User
-   */
-  protected function create(array $data)
-  {
-    return User::create([
-      'name' => $data['name'],
-      'email' => $data['email'],
-      'username' => $data['username'],
-      'level' => 0,
-      'password' => bcrypt($data['password']),
+    $validated = $request->validate([
+      'email' => 'required|email',
+      'password' => 'required|min:4',
+      'password_confirmation' => 'required|same:password',
+      'username' => 'required|min:4|max:8',
     ]);
+
+    $data = new User;
+    $data->email = $validated['email'];
+    $data->password = $validated['password_confirmation'];
+    $data->password = bcrypt($validated['password_confirmation']);
+    $data->name = $validated['username'];
+    $data->save();
+
+    return redirect('login');
   }
 }
-

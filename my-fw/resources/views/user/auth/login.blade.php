@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
-  <title>Login V15</title>
+  <title>Đăng Nhập</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/user.login.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/vender/css/bootstrap.css') }}">
 </head>
 
 <body>
