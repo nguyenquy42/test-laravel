@@ -5,7 +5,7 @@
 
 <link rel="stylesheet" href="{{ asset('assets/css/admin.login.css') }}" title="css">
 <!-- <script src="assets/js/login.js"></script> -->
- 
+
 <div class="limiter">
   <div class="container-login100">
     <div class="wrap-login100">
@@ -14,7 +14,7 @@
       </div>
 
       <form class="login100-form validate-form" action="{{ route('admin.login') }}" method="POST">
-      @csrf
+        @csrf
         <span class="login100-form-title">
           Login
         </span>
@@ -36,7 +36,7 @@
         </div>
 
         <div class="container-login100-form-btn">
-          <button class="login100-form-btn" >
+          <button class="login100-form-btn">
             Login
           </button>
         </div>
