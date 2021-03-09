@@ -11,15 +11,6 @@
 
 <body>
 
-  @if ($errors->any())
-  <div class="alert alert-danger">
-    <ul>
-      @foreach ($errors->all() as $error)
-      <li>{{ $error }}</li>
-      @endforeach
-    </ul>
-  </div>
-  @endif
   <div class="limiter">
     <div class="container-login100">
       <div class="wrap-login100">
@@ -35,12 +26,24 @@
             <span class="label-input100">Email</span>
             <input class="input100" type="text" name="email" placeholder="Nhập Email">
             <span class="focus-input100"></span>
+
+            @error('email')
+            <div class="text-danger">
+              <span>{{$message}}</span>
+            </div>
+            @enderror
           </div>
 
           <div class="wrap-input100 validate-input m-b-18">
             <span class="label-input100">Mật Khẩu</span>
             <input class="input100" type="password" name="password" placeholder="Nhập mật khẩu">
             <span class="focus-input100"></span>
+            @error('password')
+            <div class="text-danger">
+              <span>{{$message}}</span>
+            </div>
+            @enderror
+
           </div>
 
           <div class="flex-sb-m w-full p-b-30">

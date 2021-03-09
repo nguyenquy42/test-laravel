@@ -22,12 +22,14 @@ class RegisterController extends Controller
   protected function create(Request $request)
   {
 
-    $validated = $request->validate([
-      'email' => 'required|email',
-      'password' => 'required|min:4',
-      'password_confirmation' => 'required|same:password',
-      'username' => 'required|min:4|max:8',
-    ]);
+    $validated = $request->validate(
+      [
+        'email' => 'required|email',
+        'password' => 'required|min:4',
+        'password_confirmation' => 'required|same:password',
+        'username' => 'required|min:4|max:8',
+      ]
+    );
 
     $data = new User;
     $data->email = $validated['email'];
