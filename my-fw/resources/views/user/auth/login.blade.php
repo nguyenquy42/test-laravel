@@ -57,9 +57,13 @@
             </div>
           </div>
 
-          <div class="container-login100-form-btn">
+          <div class="container-login100-form-btn flex-sb-m w-full">
             <button class="login100-form-btn">
               Đăng Nhập
+            </button>
+            
+            <button class="login100-form-register-btn">
+              Đăng Ký
             </button>
           </div>
         </form>
