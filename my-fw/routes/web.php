@@ -33,24 +33,6 @@ Route::get('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'getRegister']);
 Route::post('/createregister', [RegisterController::class, 'create']);
 
-
-// Admin
-Route::get('/admin/home', function () {
-    return view('admin/home');
-});
-
-Route::get('/admin/listblog', [BlogsController::class, 'show']);
-
-Route::get('/admin/createblog', function () {
-    return view('admin/createblog');
-});
-
-Route::post('/admin/createblog', [BlogsController::class, 'addData']);
-Route::get('/admin/delete/{id}', [BlogsController::class, 'delete']);
-
-Route::get('/admin/edit/{id}', [BlogsController::class, 'edit']);
-Route::post('/admin/update/{id}', [BlogsController::class, 'update']);
-
 //  Trang View
 Route::get('/', [HomeController::class, 'index']);
 
