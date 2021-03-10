@@ -30,15 +30,14 @@
               <div class="product_item_content">
                 <span>{{ $item->category }}</span>
                 <a href="#">
-                  <h3 class="product_item_title">{{ $item->title }}</h3>
+                  <h4 class="product_item_title">{{ $item->title }}</h4>
                 </a>
-                <p class="product_item_intro">{{ $item->intro }}</p>
-                <div class="star_rating">
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star"></span>
-                  <span class="fa fa-star"></span>
+                <div class="star-rating">
+                  <span><i class="fa fa-star checked"></i></span>
+                  <span><i class="fa fa-star checked"></i></span>
+                  <span><i class="fa fa-star checked"></i></span>
+                  <span><i class="fa fa-star checked"></i></span>
+                  <span><i class="fa fa-star checked"></i></span>
                 </div>
                 <div class="list_price_cart">
                   <div class="price">
@@ -87,7 +86,7 @@
                 <a href="bai-viet/{{ $item->id }}">
                   <h3 class="blog_item_title">{{ $item->title }}</h3>
                 </a>
-                <p class="m-0 blog_item_intro">{{ strip_tags($item->content) }}</p>
+                <p class="m-0 blog_item_intro">{{ strip_tags($item->intro) }}</p>
                 <div class="list_author_date">
                   <ul class="none-list-type blog_item_author_date">
                     <li class="blog_item_ad"><a href="#"><i class="far fa-user" aria-hidden="true"></i>{{ $item->author }} </a></li>

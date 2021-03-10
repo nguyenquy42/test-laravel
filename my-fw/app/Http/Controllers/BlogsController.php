@@ -84,7 +84,7 @@ class BlogsController extends Controller
 
   public function  showDetail($id ) {
     $data = BlogsModel::find($id);
-    return view('pages/detailblog', [
+    return view('pages/product', [
       'data' => $data,
     ]);
 

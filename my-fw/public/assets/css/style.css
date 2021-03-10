@@ -45,6 +45,24 @@ img {
   padding: 100px 0;
 }
 
+
+input[type=text]:focus, 
+input[type=email]:focus, 
+input[type=url]:focus, 
+input[type=password]:focus, 
+input[type=search]:focus, 
+input[type=tel]:focus, 
+input[type=number]:focus, 
+textarea:focus, 
+input[type=button]:focus, 
+input[type=reset]:focus, 
+input[type=submit]:focus, 
+select:focus {
+  outline: none;
+  box-shadow: none;
+  border: 1px solid #ddd;
+}
+
 /*  Css reset end */
 
 /* Css Header Trang chủ start */

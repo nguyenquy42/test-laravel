@@ -8,7 +8,7 @@
         <div class="main_footer_item">
           <div class="text-center">
             <div class="footer_img">
-              <a href="#"><img src="assets/images/logo/logo-header.png" alt="logo"></a>
+              <a href="#"><img src="{{ Request::root() }}/assets/images/logo/logo-header.png" alt="logo"></a>
             </div>
             <p>Đây là trang đang test thử, trong quá trinh mà mài xài có hư thì liên hệ tao qua <a href="#">quy97@gmail.com</a>. Nên nhắn tin nói chuyện lịch sự, chân ái cảm ơn.</p>
           </div>

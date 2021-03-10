@@ -29,6 +29,24 @@
     display: inline-block;
   }
 
+  
+  .product_item_title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.375;
+    margin-bottom: 8px;
+  }
+
+  .product_item_content span {
+    font-size: 14px;
+    color: #6b6d73;
+    margin-bottom: 9px;
+  }
+
+  .single-product-card .product-card-details .star-rating i {
+    color: #fdb819;
+  }
+
 /* css list product end*/
 
 /* Css list Blogs start */
@@ -37,5 +55,6 @@
     display: inline-block;
     margin-right: 10px;
   }
+
 
 /* Css list Blogs end */

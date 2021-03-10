@@ -36,7 +36,7 @@
       <div class="row">
         <div class="col-md-2 col-lg-3">
           <div class="box_logo">
-            <a class="" href="#">LPBooks</a>
+            <a class="" href="{{ Request::root() }}">LPBooks</a>
           </div>
         </div>
         <div class="col-md-8 col-lg-6">
@@ -48,7 +48,7 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="text-white nav-link" href="#">Trang chủ</a>
+                  <a class="text-white nav-link" href="{{ Request::root() }}">Trang chủ</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="text-white nav-link dropdown-toggle" href="#" data-toggle="dropdown">Danh sách</a>
