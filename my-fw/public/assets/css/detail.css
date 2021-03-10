@@ -17,4 +17,9 @@
     content: ">";
     padding: 0 13px;
   }
+
+  .blog_item_ad {
+    display: inline-block;
+    margin-right: 10px;
+  }
   

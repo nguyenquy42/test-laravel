@@ -25,11 +25,11 @@
           <div class="list_product mb-4">
             <div class="product_item">
               <div class="product_item_img">
-                <a href="#"><img src="{{ $item->imgurl }}" alt="product"></a>
+                <a href="san-pham/{{$item->id}}"><img src="{{ $item->imgurl }}" alt="product"></a>
               </div>
               <div class="product_item_content">
                 <span>{{ $item->category }}</span>
-                <a href="#">
+                <a href="san-pham/{{$item->id}}">
                   <h4 class="product_item_title">{{ $item->title }}</h4>
                 </a>
                 <div class="star-rating">

@@ -29,11 +29,9 @@ Route::post('/createregister', [RegisterController::class, 'create']);
 //  Trang View
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/bai-viet', function () {
-    return view('pages/detailblog');
-});
+Route::get('/bai-viet/{id}', [BlogsController::class, 'showdetail']);
 
-Route::get('/bai-viet/{id}', [BlogsController::class, 'showDetail']);
+Route::get('/san-pham/{id}', [BlogsController::class, 'showProduct']);
 
 Route::get('/info', function () {
     return view('info');
