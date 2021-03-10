@@ -16,7 +16,7 @@
       </div>
 
       <div class="col-lg-4">
-        <div class="main_footer_item text-center">
+        <div class="main_footer_item">
           <h3 class="footer_title mb-3">Mẹo Vặt</h3>
           <ul class="none-list-type text-left">
             <li><a href="#">Hút thuốc bắng mắt</a></li>
@@ -27,7 +27,7 @@
       </div>
 
       <div class="col-lg-4">
-        <div class="main_footer_item text-center">
+        <div class="main_footer_item">
           <h3 class="footer_title mb-3">Danh Mục</h3>
           <ul class="none-list-type text-left">
             <li><a href="#">Mua đồ giá mắt</a></li>

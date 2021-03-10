@@ -33,5 +33,114 @@ img {
   background-color: #1b1d1f ;
 }
 
+.bg_dark_orenge {
+  background-color: #ff8400;
+}
+
+.bg_gray_4 {
+  background: #F8F8F8;
+}
+
+.pd-100 {
+  padding: 100px 0;
+}
 
 /*  Css reset end */
+
+/* Css Header Trang chủ start */
+
+.main_contact_header_top,
+.main_author {
+  padding: 10px 0;
+}
+
+.contact_ht_item {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.list_account_item {
+  display: inline-block;
+  padding: 0 5px;
+}
+
+.main_author ul li+li:before {
+  content: "|";
+  margin-right: 10px;
+}
+
+.box_logo {
+  background-color: #191919;
+  color: #fff;
+  font-size: 32px;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  perspective: 900px;
+}
+
+.box_logo:after {
+  width: 110%;
+  height: 100%;
+  position: absolute;
+  content: "";
+  left: -14px;
+  top: -56px;
+  background: #191919;
+  transform-origin: 0% 100%;
+  transform: rotateX(83deg);
+}
+
+.box_contact_top {
+  color: #fff;
+  padding-right: 15px;
+  height: 100%;  
+}
+
+.box_contact_top a:hover {
+  color: #000;
+}
+
+.list_contact_top {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.list_contact_items {
+  margin: 0 5px;
+}
+
+.list_author_top {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Css Header Trang chủ end */
+
+/* Css Footer start */
+
+.main_footer {
+  padding: 20px 0;
+}
+
+.main_footer a,
+.main_footer p {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.main_footer a:hover {
+  color: #ff8400;
+}
+
+.contact_footer_bottom {
+  width: 100%;
+  text-align: center;
+  padding-top: 0.7rem;
+  border-top: 1px solid #323436;
+}
+
+/* Css Footer end */
