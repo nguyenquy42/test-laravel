@@ -9,10 +9,10 @@
       </a>
 
       <div>
-        <ul class="none-list-type menu_top">
+        <ul class="none-list-type menu_top m-0">
           <li class="menu_top_link"><a href="{{ Request::root() }}"  target="_blank|_parent"> <i class="fa fa-globe"></i> Xem web của bạn</a></li>
-          <li class="menu_top_link"><a href=""  target="_blank|_parent"> <i class="fa fa-user"></i>{{ session('username') }}</a></li>
-          <li class="menu_top_link"><a clas href="#"> <i class="fa fa-sign-out" aria-hidden="true"></i> Đăng xuất</a></li>
+          <li class="menu_top_link"><a href=""  target="_blank|_parent"> <i class="fa fa-user"></i> {{ session('username') }}</a></li>
+          <li class="menu_top_link"><a clas href="/logout"> <i class="fa fa-sign-out" aria-hidden="true"></i> Đăng xuất</a></li>
         </ul>
       </div>
 
