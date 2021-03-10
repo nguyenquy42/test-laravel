@@ -30,12 +30,14 @@ class BlogsController extends Controller
     $validated = $request->validate([
       'title' => 'required',
       'intro' => 'required',
+      'slug' => 'required',
       'content' => 'required',
     ]);
 
     $blog = new BlogsModel;
     $blog->title = $validated['title'];
     $blog->intro = $validated['intro'];
+    $blog->slug = $validated['slug'];
     $blog->imgurl = "assets/images/product/2.jpg";
     $blog->content = $validated['content'];
     $blog->author = session('username');
@@ -68,11 +70,13 @@ class BlogsController extends Controller
     $validated = $request->validate([
       'title' => 'required',
       'intro' => 'required',
+      'slug' => 'required',
       'content' => 'required',
     ]);
 
     $data->title = $validated['title'];
     $data->intro = $validated['intro'];
+    $data->slug = $validated['slug'];
     $data->imgurl = "assets/images/product/1.jpg";
     $data->content = $validated['content'];
     $data->author = session('username');
@@ -91,8 +95,10 @@ class BlogsController extends Controller
   }
 
   
-  public function  showdetail($id ) {
-    $data = BlogsModel::find($id);
+  public function  showdetail($slug ) {
+
+    $data = BlogsModel::where('slug', $slug)->firstOrFail();
+
     return view('pages/detail', [
       'data' => $data,
     ]);

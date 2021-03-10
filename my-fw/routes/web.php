@@ -29,7 +29,7 @@ Route::post('/createregister', [RegisterController::class, 'create']);
 //  Trang View
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/bai-viet/{id}', [BlogsController::class, 'showdetail']);
+Route::get('/bai-viet/{slug}', [BlogsController::class, 'showdetail']);
 
 Route::get('/san-pham/{id}', [BlogsController::class, 'showProduct']);
 
