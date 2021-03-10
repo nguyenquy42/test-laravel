@@ -82,4 +82,12 @@ class BlogsController extends Controller
     return redirect('admin/listblog');
   }
 
+  public function  showDetail($id ) {
+    $data = BlogsModel::find($id);
+    return view('pages/detailblog', [
+      'data' => $data,
+    ]);
+
+  }
+
 }

@@ -12,7 +12,6 @@
 @section('content')
 <main>
 
-
     <!-- shop-product area start -->
     <div class="shop-details-area bg_gray_4 pd-100">
         <div class="container">
@@ -21,14 +20,14 @@
                     <div class="product-thumbnail-wrapper">
                         <div class="single-thumbnail-slider">
                             <div class="slider-item">
-                                <img src="http://theuxlab.net/zenax/assets/img/product/shop/shop-details/01.png" alt="item">
+                                <img src="{{ Request::root() }}/{{ $data->imgurl }}" alt="item">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="shop-item-details">
-                        <h4 class="entry-title">Smart Muzi Lipattu Pokim 15 Zalim DX2 Laptol</h4>
+                        <h4 class="entry-title">{{$data->title}}</h4>
                         <div class="star-rating">
                             <span><i class="fa fa-star"></i></span>
                             <span><i class="fa fa-star"></i></span>
@@ -63,13 +62,13 @@
                     <div class="shop-tabs">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Specifications</a>
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Thông Tin Chi Tiết</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Description</a>
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Miêu Tả</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="profile" aria-selected="false">Reviews (09)</a>
+                                <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="profile" aria-selected="false">Bình Luận (0)</a>
                             </li>
                         </ul>
                         <div class="tab-content specific-tab" id="myTabContent">
@@ -116,30 +115,7 @@
                                 </table>
                             </div>
                             <div class="tab-pane fade describe-tab" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <h3 class="title">About Product</h3>
-                                <p class="mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-                                    1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                                    specimen book. It has survived not only five centu but also the leap into electronic
-                                    typesetting, remaining essentially unchanged.</p>
-                                <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem
-                                    Ipsum passages, and more recently with desktop publishing software like Aldus
-                                    PageMaker including versions of lorem Ipsum.</p>
-                                <div class="quick-view">
-                                    <h3 class="title">Quick View</h3>
-                                    <ul>
-                                        <li>Lorem Ipsum is simply dummy text of the printing.</li>
-                                        <li>Contrary to popular belief, Lorem Ipsum is not simply.</li>
-                                        <li>There are many variations of passages.</li>
-                                        <li>It is a long established fact that a reader will be distracted.</li>
-                                        <li>The standard chunk of Lorem Ipsum used since the 1500s.</li>
-                                    </ul>
-                                </div>
-                                <h3 class="title">Warranty Policy</h3>
-                                <p>It has survived not only five centuries, but also the leap into electronic
-                                    typesetting, remaining essentially unchanged. It was popularised in the 1960s with
-                                    the release of Letraset sheets containing Lorem Ipsum passages, and more recently
-                                    with desktop publishing software like Aldus PageMaker including versions.</p>
+                            {{ strip_tags($data->content) }}
                             </div>
                             <div class="tab-pane review-tab fade" id="review" role="tabpanel" aria-labelledby="review-tab">
                                 <p class="woocommerce-noreviews">There are no reviews yet.</p>

@@ -79,12 +79,12 @@
           <div class="row mb-4 main_blog">
             <div class="col-lg-3  d-flex align-items-center">
               <div class="blog_item_img">
-                <a href="#"><img src="{{ $item->imgurl }}" alt="img"></a>
+                <a href="bai-viet/{{ $item->id }}"><img src="{{ $item->imgurl }}" alt="img"></a>
               </div>
             </div>
             <div class="col-lg-9">
               <div class="blog_item_content">
-                <a href="#">
+                <a href="bai-viet/{{ $item->id }}">
                   <h3 class="blog_item_title">{{ $item->title }}</h3>
                 </a>
                 <p class="m-0 blog_item_intro">{{ strip_tags($item->content) }}</p>

@@ -33,6 +33,8 @@ Route::get('/bai-viet', function () {
     return view('pages/detailblog');
 });
 
+Route::get('/bai-viet/{id}', [BlogsController::class, 'showDetail']);
+
 Route::get('/info', function () {
     return view('info');
 });
