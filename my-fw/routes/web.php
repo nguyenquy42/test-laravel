@@ -22,13 +22,6 @@ Route::get('/login', [LoginController::class, 'getLogin']);
 Route::post('/postlogin', [LoginController::class, 'login']);
 Route::get('/logout', [LoginController::class, 'logout']);
 
-// Route::match(['get', 'post'], '/login', [LoginController::class, 'login'])->name('login');
-
-// Route::middleware('auth')->group(function (){
-//     Route::get('/', [HomeController::class, 'index'])->name('home');
-//     Route::get('/logout', [LoginController::class, 'logout'])->name('home');
-// });
-
 // Resgister User.
 Route::get('/register', [RegisterController::class, 'getRegister']);
 Route::post('/createregister', [RegisterController::class, 'create']);

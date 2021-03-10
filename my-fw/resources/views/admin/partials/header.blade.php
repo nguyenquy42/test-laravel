@@ -4,7 +4,7 @@
     <!-- Brand -->
     <div class="top_nav_header">
 
-      <a class="navbar-brand" href="{{ Request::root() }}/admin/home">
+      <a class="navbar-brand" href="{{ Request::root() }}/admin">
         <h3>LPBooks</h3>
       </a>
 
@@ -22,7 +22,6 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-
 
   </nav>
 
