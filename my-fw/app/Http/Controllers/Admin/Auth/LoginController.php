@@ -11,6 +11,9 @@ class LoginController extends Controller
   //
   public function login(Request $request)
   {
+    if($request->session()->has('username')){
+      return redirect('/admin');
+    }
     if ($request->getMethod() == 'GET') {
       return view('admin.login');
     }

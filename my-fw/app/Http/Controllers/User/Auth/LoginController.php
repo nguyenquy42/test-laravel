@@ -10,8 +10,11 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
   //
-  public function getLogin()
+  public function getLogin(Request $request)
   {
+    if($request->session()->has('user')){
+      return redirect('/');
+    }
     return view('user.auth.login');
   }
 
