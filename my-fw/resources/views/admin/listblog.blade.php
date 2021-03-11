@@ -75,7 +75,7 @@
               <img src="{{ Request::root() }}/{{ $item->imgurl }}" alt="img">
             </td>
             <td class="text-left">
-              <a href="#">{{ $item->title }}</a>
+              <a href="{{ Request::root() }}/bai-viet/{{ $item->slug }}">{{ $item->title }}</a>
             </td>
             <td>{{ $item->author }}</td>
             <td class="text-left blog_category">
