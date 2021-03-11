@@ -1,6 +1,47 @@
 @extends('layout.bodyadmin')
 @section('title', 'Danh sách bài viết | Lpbooks')
 
+@section('linkcss')
+<link data-require="sweet-alert@*" data-semver="0.4.2" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+@endsection
+
+@section('linkjs')
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+  $(document).on('click', '.button', function(e) {
+    e.preventDefault();
+    var id = $(this).data('id');
+
+    swal({
+      title: "Bạn có chắc không?",
+      text: "Bạn sẽ không thể khôi phục dử liệu này!",
+      icon: "warning",
+      buttons: [
+        'Không, quay lại!',
+        'Có, Tôi chắc chắn!'
+      ],
+      dangerMode: true,
+    }).then(function(isConfirm) 
+    {
+      if (!isConfirm)
+      {return;}
+        $.ajax({
+          url: "{{ url('/admin/delete/') }}/"+id,
+          type: "GET",
+          dataType: "html",
+          success: function() {
+            $('.item-' + id).remove()
+            swal("Xong!", "Dử liệu đã được xoá thành công!", "success");
+          },
+          error: function(xhr, ajaxOptions, thrownError) {
+            swal("Lỗi khi xóa!", "Vui lòng thử lại", "error");
+          }
+        });
+    })
+  });
+</script>
+@endsection
+
 @section('content')
 <div class="container-fulid">
 
@@ -28,7 +69,7 @@
         <tbody>
           @foreach ($blogs as $item)
 
-          <tr class="text-center">
+          <tr class="text-center item-{{ $item->id }}">
             <td>{{ $item->id }}</td>
             <td class="item_img_block">
               <img src="{{ Request::root() }}/{{ $item->imgurl }}" alt="img">
@@ -53,7 +94,7 @@
               <a class="btn btn-outline-info" href="edit/{{ $item->id }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
             </td>
             <td>
-              <a href="delete/{{ $item->id }}" class="btn btn-outline-danger btn_text_danger"><i class="fa fa-times" aria-hidden="true"></i></a>
+              <a class="btn btn-outline-danger btn_text_danger  button" data-id="{{ $item->id }}"><i class="fa fa-times" aria-hidden="true"></i></a>
             </td>
           </tr>
 

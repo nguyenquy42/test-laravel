@@ -50,9 +50,9 @@ class BlogsController extends Controller
 
   public function delete($id)
   {
-    $data = BlogsModel::find($id);
-    $data->delete();
-    return redirect('/admin/listblog');
+    $data = BlogsModel::find($id)->delete();
+    // $data->delete();
+    return redirect('/admin/listblog') ->with('success','User deleted successfully');
   }
 
   public function edit($id)
