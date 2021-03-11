@@ -38,7 +38,10 @@ class BlogsController extends Controller
     $blog->title = $validated['title'];
     $blog->intro = $validated['intro'];
     $blog->slug = $validated['slug'];
-    $blog->imgurl = "assets/images/product/2.jpg";
+    $blog->title_tag = $request->title_tag;
+    $blog->keyword = $request->keyword;
+    $blog->category = $request->category;
+    $blog->imgurl = $request->imgurl;
     $blog->content = $validated['content'];
     $blog->author = session('username');
     $blog->date = date("Y/m/d");
@@ -77,7 +80,10 @@ class BlogsController extends Controller
     $data->title = $validated['title'];
     $data->intro = $validated['intro'];
     $data->slug = $validated['slug'];
-    $data->imgurl = "assets/images/product/1.jpg";
+    $data->title_tag = $request->title_tag;
+    $data->keyword = $request->keyword;
+    $data->category = $request->category;
+    $data->imgurl = $request->imgurl;
     $data->content = $validated['content'];
     $data->author = session('username');
     $data->date = date("Y/m/d");

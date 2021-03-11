@@ -37,6 +37,11 @@ img {
   background-color: #ff8400;
 }
 
+.bg-red {
+  background-color: #dd4b39;
+  color: #fff;
+}
+
 .bg_gray_4 {
   background: #F8F8F8;
 }
