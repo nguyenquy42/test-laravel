@@ -40,34 +40,30 @@
     })
   });
 
-
   $(document).on('click', '.input_status', function() {
     var status = $(this).is(':checked');
     var id = $(this).data('id');
     var iditem = $(this).attr('id');
     status == true ? status = 1 : status = 0;
-    console.log(status);
-    console.log(id);
-    console.log(iditem);
     $.ajax({
       url: "{{ url('/admin/status/') }}/" + id,
-      type: "GET",
+      type: "POST",
       data: {
+        "_token": "{{ csrf_token() }}",
         "status": status,
       },
       dataType: "html",
       success: function() {
-        // alert("Xong! , thay đổi thành công.");
-        notie.alert({ text: 'Info!' });
+        notie.alert({ type: 1, text: 'Đã thay đổi trạng thái thành công', time: 2 });
       },
       error: function(xhr, ajaxOptions, thrownError) {
-        // alert("Lỗi khi thay đổi!");
-        notie.alert({ type: 'error', text: 'Oops!' });
+        notie.alert({ type: 'error', text: 'Lỗi rồi, nói admin sửa cho.', time: 2 });
 
       }
     });
 
   })
+  
 </script>
 @endsection
 

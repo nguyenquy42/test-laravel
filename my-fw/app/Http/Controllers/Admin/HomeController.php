@@ -16,4 +16,14 @@ class HomeController extends Controller
     $request->session()->put('username', $user);
     return view('admin/home');
   }
+
+  public function show()
+  {
+    $data = Auth::user();
+    return view('admin/users', [
+      'data' => $data
+    ]);
+  }
+
+
 }
