@@ -21,24 +21,54 @@
         'Có, Tôi chắc chắn!'
       ],
       dangerMode: true,
-    }).then(function(isConfirm) 
-    {
-      if (!isConfirm)
-      {return;}
-        $.ajax({
-          url: "{{ url('/admin/delete/') }}/"+id,
-          type: "GET",
-          dataType: "html",
-          success: function() {
-            $('.item-' + id).remove()
-            swal("Xong!", "Dử liệu đã được xoá thành công!", "success");
-          },
-          error: function(xhr, ajaxOptions, thrownError) {
-            swal("Lỗi khi xóa!", "Vui lòng thử lại", "error");
-          }
-        });
+    }).then(function(isConfirm) {
+      if (!isConfirm) {
+        return;
+      }
+      $.ajax({
+        url: "{{ url('/admin/delete/') }}/" + id,
+        type: "GET",
+        dataType: "html",
+        success: function() {
+          $('.item-' + id).remove()
+          swal("Xong!", "Dử liệu đã được xoá thành công!", "success");
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+          swal("Lỗi khi xóa!", "Vui lòng thử lại", "error");
+        }
+      });
     })
   });
+
+
+  $(document).on('click', '.input_status', function() {
+    var status = $(this).is(':checked');
+    var id = $(this).data('id');
+    var iditem = $(this).attr('id');
+    if (status == true) {
+      status = 1;
+    } else {
+      status = 0;
+    }
+    console.log(status);
+    console.log(id);
+    console.log(iditem);
+    $.ajax({
+      url: "{{ url('/admin/status/') }}/" + id,
+      type: "GET",
+      data: {
+        "status": status,
+      },
+      dataType: "html",
+      success: function() {
+        alert("Xong! , thay đổi thành công.");
+      },
+      error: function(xhr, ajaxOptions, thrownError) {
+        alert("Lỗi khi thay đổi!");
+      }
+    });
+
+  })
 </script>
 @endsection
 
@@ -82,13 +112,18 @@
               <a href="#"><i class="fa fa-external-link"></i></a><a href=""></a><a href="#"><span> {{ $item->category }} </span></a><br>
             </td>
             <td> {{ $item->date }} </td>
-            <td>
-              <form>
-                <div class="custom-control custom-switch">
-                  <input type="checkbox" class="custom-control-input" id="switch1">
-                  <label class="custom-control-label" for="switch1">chọn</label>
-                </div>
-              </form>
+            <td id="{{ $item->id }}">
+              @if ($item->status == 1)
+              <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input input_status" id="status{{ $item->id }}" data-id="{{ $item->id }}" name="status" checked>
+                <label class="custom-control-label" for="status{{ $item->id }}"></label>
+              </div>
+              @else
+              <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input input_status" id="status{{ $item->id }}" data-id="{{ $item->id }}" name="status">
+                <label class="custom-control-label" for="status{{ $item->id }}"></label>
+              </div>
+              @endif
             </td>
             <td>
               <a class="btn btn-outline-info" href="edit/{{ $item->id }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
@@ -97,9 +132,7 @@
               <a class="btn btn-outline-danger btn_text_danger  button" data-id="{{ $item->id }}"><i class="fa fa-times" aria-hidden="true"></i></a>
             </td>
           </tr>
-
           @endforeach
-
         </tbody>
       </table>
     </div>

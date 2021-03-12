@@ -12,7 +12,7 @@ class  HomeController extends Controller
   public function index()
   {
     $products = ProductModel::all();
-    $blogs = BlogsModel::all();
+    $blogs = BlogsModel::where('status',1)->get();
     return view('/pages.index', [
       'products' => $products,
       'blogs' => $blogs

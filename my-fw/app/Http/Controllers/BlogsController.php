@@ -46,7 +46,6 @@ class BlogsController extends Controller
     $blog->author = session('username');
     $blog->date = date("Y/m/d");
     $blog->save();
-
     return redirect('admin/listblog');
   }
 
@@ -111,5 +110,14 @@ class BlogsController extends Controller
 
   }
   
+
+  public function updateStatus(Request $request, $id)
+  {
+    $data = BlogsModel::find($id);
+    $data->status = $request->status;
+    $data->save();
+    return redirect('admin/listblog');
+
+  }
 
 }

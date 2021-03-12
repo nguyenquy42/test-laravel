@@ -22,4 +22,7 @@ Route::middleware('auth:admin')->group(function () {
   Route::get('/edit/{id}', [BlogsController::class, 'edit']);
   Route::post('/update/{id}', [BlogsController::class, 'update']);
 
+  Route::get('/status/{id}', [BlogsController::class, 'updateStatus']);
+
+
 });
