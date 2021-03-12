@@ -45,11 +45,7 @@
     var status = $(this).is(':checked');
     var id = $(this).data('id');
     var iditem = $(this).attr('id');
-    if (status == true) {
-      status = 1;
-    } else {
-      status = 0;
-    }
+    status == true ? status = 1 : status = 0;
     console.log(status);
     console.log(id);
     console.log(iditem);
@@ -61,10 +57,13 @@
       },
       dataType: "html",
       success: function() {
-        alert("Xong! , thay đổi thành công.");
+        // alert("Xong! , thay đổi thành công.");
+        notie.alert({ text: 'Info!' });
       },
       error: function(xhr, ajaxOptions, thrownError) {
-        alert("Lỗi khi thay đổi!");
+        // alert("Lỗi khi thay đổi!");
+        notie.alert({ type: 'error', text: 'Oops!' });
+
       }
     });
 

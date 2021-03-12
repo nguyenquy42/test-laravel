@@ -6,4 +6,5 @@
   <link rel="stylesheet" href="{{ asset('assets/vender/css/bootstrap.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/vender/css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/admin.style.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/notie-master/dist/notie.min.css') }}">
   
