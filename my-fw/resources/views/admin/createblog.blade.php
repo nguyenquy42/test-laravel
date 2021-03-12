@@ -6,7 +6,7 @@
 @endsection
 
 @section('linkjs')
-<script src="{{ asset('assets/vender/js/tinymce.min.js') }}"></script>
+<script src="{{ asset('assets\tinymce\js\tinymce\tinymce.min.js') }}"></script>
 <script>
   $(document).ready(function() {
     $('.inputs').keyup(function() {
@@ -47,11 +47,7 @@
 
   tinymce.init({
     selector: 'textarea#tiny',
-
-    init_instance_callback: function(editor) {
-      var freeTiny = document.querySelector('.tox .tox-notification--in');
-      freeTiny.style.display = 'none';
-    },
+    publics: 'image',
   });
 </script>
 @endsection
